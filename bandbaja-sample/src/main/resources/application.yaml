@@ -1,0 +1,20 @@
+bandbaja:
+  sqs:
+    aws-endpoint: http://localhost:4566
+    aws-region: us-east-1
+    polling:
+      initialDelayInMillis: 1000
+      pollingIntervalInMillis: 1000
+      pollingThreads: 1
+    threadPoolSize: 10
+    threadPoolQueueSize: 10
+    receivers:
+      0:
+        queueUrl: http://localhost:4566/queue/us-east-1/000000000000/local_p0
+        waitTimeInSeconds: 1
+      1:
+        queueUrl: http://localhost:4566/queue/us-east-1/000000000000/local_p10
+        waitTimeInSeconds: 1
+      2:
+        queueUrl: http://localhost:4566/queue/us-east-1/000000000000/local_p20
+        waitTimeInSeconds: 1

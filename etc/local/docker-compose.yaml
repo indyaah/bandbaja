@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=sqs
+      - LOCALSTACK_HOST=localhost
+      - SQS_ENDPOINT_STRATEGY=dynamic
+    volumes:
+      - ./localstack:/etc/localstack/init/ready.d
